@@ -1,9 +1,14 @@
-const CreateUser = () => {
+import CreateUser from "../components/CreateUser";
+import EditUser from "../components/EditUser";
+
+const User = () => {
+	const activeUser = JSON.parse(localStorage.getItem('activeUser'));
+
   return (
     <div>
-      <h1>User</h1>
+				{activeUser ? <EditUser activeUser={activeUser} /> : <CreateUser />}
     </div>
-  );
-};
+	);
+}
 
-export default CreateUser;
+export default User;
