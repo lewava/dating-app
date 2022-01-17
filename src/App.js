@@ -1,16 +1,18 @@
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Login from "./pages/Login";
-import CreateUser from "./pages/CreateUser";
+import User from "./pages/User";
 import Profile from "./pages/Profile";
+import StartPage from "./pages/StartPage";
 
 function App() {
   return (
     <Router>
       <div className="App">
         <Routes>
-          <Route exact path="/" element={<Login />} />
-          <Route exact path="/user/create" element={<CreateUser />} />
+          <Route exact path="/" element={<StartPage />} />
+          <Route exact path="/user" element={<User />} />
           <Route exact path="/profile" element={<Profile />} />
+          <Route exact path="/Login" element={<Login />} />
         </Routes>
       </div>
     </Router>
