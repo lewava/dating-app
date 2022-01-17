@@ -9,23 +9,6 @@ const LoginUser = () => {
 
   const navigate = useNavigate();
 
-  useEffect(() => {
-    let currentUsers = JSON.parse(localStorage.getItem("users"));
-
-    if (!currentUsers) {
-      const guest = {
-        email: "gäst",
-        password: "password"
-      };
-
-      const defaultUsers = [
-        guest
-      ];
-
-      localStorage.setItem("users", JSON.stringify(defaultUsers));
-    }
-  }, []);
-
   function checkUser(e) {
     e.preventDefault();
     const userEmail = e.target[0].value;
@@ -34,8 +17,6 @@ const LoginUser = () => {
     users.forEach(user => {
       if (user.email === userEmail && user.password === password) {
         localStorage.setItem('activeUser', JSON.stringify(user));
-
-        //NAVIGATE.. utan "/" blir det subdomän, med tillbaka till roten!
         navigate('/profile');
       } else {
         setLoginFail(true);
