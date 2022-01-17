@@ -1,12 +1,10 @@
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import LoginUser from "../components/LoginUser";
 
 const Login = () => {
   return (
     <div>
-      <h1>Login</h1>
-      <Link to="/profile">Logga in</Link>
-      <br></br>
-      <Link to="/user/create">Skapa ny användare</Link>
+      <LoginUser />
     </div>
   );
 };
