@@ -1,4 +1,5 @@
 import DashboardCard from "../components/dashboard/DashboardCard";
+import Nav from "../components/nav/Nav";
 
 import styles from "../styles/Dashboard.module.scss";
 
@@ -10,6 +11,7 @@ const Dashboard = () => {
 
   return (
     <div className={styles.container}>
+      <Nav />
       <DashboardCard users={filteredUsers} />
     </div>
   );

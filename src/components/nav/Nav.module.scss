@@ -1,0 +1,24 @@
+@import "../../styles/globals.scss";
+
+.navContainer {
+  display: flex;
+  align-items: center;
+
+  background-color: $sixth-color;
+  color: $fourth-color;
+  font-family: Helvetica;
+  font-weight: 300;
+  width: 100%;
+}
+.NavTitle {
+  margin-right: auto;
+  font-size: 150%;
+  padding: 12px 16px;
+  color: $fifth-color;
+}
+.NavItem {
+  padding: 16px 16px;
+  cursor: pointer;
+  vertical-align: middle;
+  color: $fifth-color;
+}

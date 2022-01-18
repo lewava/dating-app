@@ -14,8 +14,8 @@ const DashboardCard = ({ users }) => {
   };
 
   return (
-    <>
-      <div className={styles.container}>
+    <div className={styles.container}>
+      <div className={styles.dashboardContainer}>
         <h2 className={styles.name}>{users[currentUser].profile.name}</h2>
         <div className={styles.imgContainer}>
           <img src={userImage} alt="user" className={styles.img} />
@@ -38,7 +38,7 @@ const DashboardCard = ({ users }) => {
           />
         </button>
       </div>
-    </>
+    </div>
   );
 };
 
