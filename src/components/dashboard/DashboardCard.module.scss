@@ -1,0 +1,77 @@
+@import "../../styles/globals.scss";
+
+.container {
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  background-color: $sixth-color;
+  border-radius: 8%;
+  box-shadow: 4px 4px 4px $third-color;
+}
+
+.name {
+  color: $fifth-color;
+  font-family: $primary-font;
+  margin-bottom: 1rem;
+}
+
+.imgContainer {
+  width: 80%;
+}
+
+.img {
+  width: 100%;
+  border-radius: 5%;
+}
+
+.info {
+  color: $fifth-color;
+  font-family: $primary-font;
+  font-size: 1rem;
+  font-weight: bold;
+  margin: 0.5rem;
+}
+
+.btnContainer {
+  margin: -50px;
+  width: 28%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn {
+  background-color: white;
+  padding: 10px;
+  border-radius: 50%;
+  border: 2px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 3px 3px 3px $third-color;
+  cursor: pointer;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: rgb(203, 17, 17);
+  width: 100px;
+  height: 100px;
+}
+
+.btn:hover {
+  animation: bounce 0.5s infinite alternate;
+}
+
+.btnImg {
+  width: 70%;
+}
+
+@keyframes bounce {
+  from {
+    margin-top: 0;
+  }
+  to {
+    margin-top: -15px;
+  }
+}
