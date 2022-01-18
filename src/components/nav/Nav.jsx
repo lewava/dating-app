@@ -5,13 +5,17 @@ const Nav = () => {
   return (
     <nav className={styles.navContainer}>
       <Link to="/" className={styles.NavTitle}>
-        Home
+        Startsida
+      </Link>
+
+      <Link to="/user" className={styles.NavItem}>
+        Konto
       </Link>
       <Link to="/profile" className={styles.NavItem}>
-        profile
+        Profil
       </Link>
       <Link to="/dashboard" className={styles.NavItem}>
-        dashboard
+        Matcha
       </Link>
     </nav>
   );
