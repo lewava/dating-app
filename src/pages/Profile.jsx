@@ -1,7 +1,7 @@
 import { useState } from "react";
 import DisplayProfile from "./../components/DisplayProfile";
 import Nav from "../components/nav/Nav";
-import "./../components/profile.css";
+import "./../components/profile.scss";
 
 const ProfileView = () => {
   const [editProfile, setEditProfile] = useState(0);
