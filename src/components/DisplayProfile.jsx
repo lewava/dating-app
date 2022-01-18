@@ -4,13 +4,45 @@ import ProfileField from './../components/ProfileField';
 
 const DisplayProfile= ({editProfile, switchMode}) => {
   const [user, setUser] = useState(null);
+  const [name, setName] = useState('');
+  const [age, setAge] = useState(0);
+  const [interest, setInterest] = useState('');
+  const [location, setLocation] = useState('');
 
   useEffect(() => {
-    const activeUser = localStorage.getItem('activeUser');
-    console.log(activeUser);
-    // if (!activeUser) return <></>;
-    setUser(JSON.parse(activeUser));
+    const LSUser = localStorage.getItem('activeUser');
+    const activeUser = JSON.parse(LSUser);
+
+    if (activeUser){
+      setUser(activeUser);
+      setName(activeUser.profile.name)
+      setAge(activeUser.profile.age)
+      setInterest(activeUser.profile.interest)
+      setLocation(activeUser.profile.location)
+    }
   },[]);
+
+  function saveProfile() {
+    const newProfile = {
+      email: user.email,
+      password: user.password,
+      profile: {
+        name,
+        age,
+        interest,
+        location
+      }
+    }
+    console.log(newProfile);
+    localStorage.setItem('activeUser', JSON.stringify(newProfile));
+    let allUsers = JSON.parse(localStorage.getItem('users')); 
+    //gör en rad
+    const index = allUsers.findIndex(user => user === newProfile);
+    allUsers.slice(index, 1);
+    allUsers.push(newProfile);
+    setUser(JSON.parse(localStorage.getItem('activeUser')))
+    switchMode();
+  }
 
   return (
     <div>
@@ -23,28 +55,29 @@ const DisplayProfile= ({editProfile, switchMode}) => {
           <article>
             <span>Namn</span>
             <span>
-              <ProfileField content={user.profile.name} editProfile={editProfile} id="name" type="text"/>
+              <ProfileField newContent={setName} content={user.profile.name} editProfile={editProfile} id="name" type="text"/>
             </span>
             <span>Ålder</span>
             <span>
-              <ProfileField content={user.profile.age} editProfile={editProfile} id="age" type="number"/>
+              <ProfileField newContent={setAge} content={user.profile.age} editProfile={editProfile} id="age" type="number"/>
             </span>
 
             {/* test */}
             <span>Ort</span>
             <span>
-              <ProfileField content={user.profile.location} editProfile={editProfile} id="location" type="text"/>
+              <ProfileField newContent={setLocation} content={user.profile.location} editProfile={editProfile} id="location" type="text"/>
             </span>
             <span>Intressen</span>
             <span>
-              <ProfileField content={user.profile.interest} editProfile={editProfile} id="interest" type="text"/>
+              <ProfileField newContent={setInterest} content={user.profile.interest} editProfile={editProfile} id="interest" type="text"/>
             </span>
 
             {/* <span>Ort</span><span>Stockholm</span>
             <span>Intressen</span><span>Details</span> */}
           </article>
         </section>
-        {editProfile ? <button onClick={switchMode}>Cancel</button> : null}
+        {editProfile ? <button onClick={switchMode}>Avbryt</button> : null}
+        {editProfile ? <button onClick={saveProfile}>Spara</button> : null}
       </>}
         
         </div>

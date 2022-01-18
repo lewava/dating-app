@@ -1,23 +1,17 @@
-import { useState } from 'react'
+import { useState } from "react";
 
 
-const ProfileField= ({content, editProfile, id, type}) => {
+const ProfileField= ({newContent, content, editProfile, id, type}) => {
 
-  const [name, setName] = useState(content);
+  const [currentContent, setCurrentContent] = useState(content);
 
-  // function saveToLocaleStorage() {
-  //   const profile = {
-  //     name: name,
-  //     age: 'test',
-  //     location: 'test',
-  //     interest: 'test'
-  //   }
-  // }
-
+  function updateContent(value) {
+    setCurrentContent(value);
+    newContent(value);
+  }
     return (
       <>
-        {editProfile ? <input type={type} id={id} name={id} value={name} onChange={e => setName(e.target.value)} 
-        // onBlur={changeName}
+        {editProfile ? <input type={type} id={id} name={id} value={currentContent} onChange={(e) => updateContent(e.target.value)} 
         /> : content}
       </>
     );
