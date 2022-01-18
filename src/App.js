@@ -10,20 +10,41 @@ function App() {
   useEffect(() => {
     let currentUsers = JSON.parse(localStorage.getItem("users"));
     if (!currentUsers) {
-      const guest = {
-        email: "gäst",
-        password: "password",
-        profile: {
-          name: "",
-          age: 0,
-          interest: "",
-          location: ""
+      const guests = [
+        {
+          email: "gäst",
+          password: "password",
+          profile: {
+            name: "gästen",
+            age: 47,
+            interest: "Jag tycker om innebandy och fotboll.",
+            location: "Stockholm"
+          }
+        },
+        {
+          email: "pär",
+          password: "password",
+          profile: {
+            name: "Pär",
+            age: 31,
+            interest: "Jag tycker om ishockey och fotboll.",
+            location: "Göteborg"
+          }
+        },
+        {
+          email: "edvard",
+          password: "password",
+          profile: {
+            name: "edvard",
+            age: 18,
+            interest: "Jag tycker om slagsmålssporter och huliganer.",
+            location: "Jokkmokk"
+          }
         }
-      };
-
-      const defaultUsers = [guest];
-			localStorage.setItem("users", JSON.stringify(defaultUsers));
+      ];
+			localStorage.setItem("users", JSON.stringify(guests));
 		}
+
 	}, []);
 
   return (
