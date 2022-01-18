@@ -3,10 +3,10 @@ import Login from "./pages/Login";
 import User from "./pages/User";
 import Profile from "./pages/Profile";
 import StartPage from "./pages/StartPage";
+import Dashboard from "./pages/Dashboard";
 import { useEffect } from "react";
 
 function App() {
-
   useEffect(() => {
     let currentUsers = JSON.parse(localStorage.getItem("users"));
     if (!currentUsers) {
@@ -18,8 +18,8 @@ function App() {
             name: "gästen",
             age: 47,
             interest: "Jag tycker om innebandy och fotboll.",
-            location: "Stockholm"
-          }
+            location: "Stockholm",
+          },
         },
         {
           email: "pär",
@@ -28,8 +28,8 @@ function App() {
             name: "Pär",
             age: 31,
             interest: "Jag tycker om ishockey och fotboll.",
-            location: "Göteborg"
-          }
+            location: "Göteborg",
+          },
         },
         {
           email: "edvard",
@@ -38,14 +38,13 @@ function App() {
             name: "edvard",
             age: 18,
             interest: "Jag tycker om slagsmålssporter och huliganer.",
-            location: "Jokkmokk"
-          }
-        }
+            location: "Jokkmokk",
+          },
+        },
       ];
-			localStorage.setItem("users", JSON.stringify(guests));
-		}
-
-	}, []);
+      localStorage.setItem("users", JSON.stringify(guests));
+    }
+  }, []);
 
   return (
     <Router>
@@ -55,6 +54,7 @@ function App() {
           <Route exact path="/user" element={<User />} />
           <Route exact path="/profile" element={<Profile />} />
           <Route exact path="/Login" element={<Login />} />
+          <Route exact path="/dashboard" element={<Dashboard />} />
         </Routes>
       </div>
     </Router>
