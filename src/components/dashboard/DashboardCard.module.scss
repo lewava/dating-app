@@ -1,0 +1,15 @@
+@use "../../styles/globals.scss";
+
+.container {
+  max-width: 10%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: globals.$sixth-color;
+}
+
+.img {
+  width: 200px;
+  border-radius: 5%;
+}
