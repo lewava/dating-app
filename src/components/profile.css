@@ -1,10 +1,14 @@
 
-div {
+.div-wrapper {
+    display:block;
+    width:100%;
+}
+.div-wrapper div {
     display:block;
     width:100%;
 }
 
-.profileimg {
+.div-wrapper .profileimg {
     display:block;
     width:150px;
     height:150px;
@@ -12,7 +16,7 @@ div {
     border:2px solid black;
 }
 
-section {
+.div-wrapper section {
     display:flex;
     flex-flow: row wrap;
     justify-content:space-around;
@@ -21,7 +25,7 @@ section {
     margin-right:auto;
 }
 
-article {
+.div-wrapper article {
     display:flex;
     width:100%;
     min-width:500px;
@@ -29,31 +33,31 @@ article {
     margin-bottom:1em;
 }
 
-article:nth-child(1) {
+.div-wrapper article:nth-child(1) {
     justify-content:center;
 }
 
-article:nth-child(2) {
+.div-wrapper article:nth-child(2) {
     flex-flow: row wrap;
     justify-content:space-around;
 }
-article:nth-child(2) span {
+.div-wrapper article:nth-child(2) span {
     width:50%;
     font-size:1.3em;
 }
-article:nth-child(2) span:nth-child(odd) {
+.div-wrapper article:nth-child(2) span:nth-child(odd) {
     font-weight:bold;
 }
 
 @media only screen and (max-width: 600px) {
-    section {
+  .div-wrapper section {
         flex-flow: column wrap;
     }
-    article:nth-child(2) span {
+    .div-wrapper article:nth-child(2) span {
         width:100%;
         text-align:center;
     }
-    article:nth-child(2) span:nth-child(even) {
+    .div-wrapper article:nth-child(2) span:nth-child(even) {
         margin-bottom:1em;
     }
 }

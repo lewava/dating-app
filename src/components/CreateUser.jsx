@@ -1,26 +1,8 @@
-import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './create-user.scss';
 
 const CreateUser = () => {
 	const navigate = useNavigate();
-
-	useEffect(() => {
-		let currentUsers = JSON.parse(localStorage.getItem("users"));
-
-		if (!currentUsers) {
-			const guest = {
-				email: "gäst",
-				password: "password"
-			};
-	
-			const defaultUsers = [
-				guest
-			];
-	
-			localStorage.setItem("users", JSON.stringify(defaultUsers));
-		}
-	}, []);
 
 	function createAccount(e) {
 		e.preventDefault();
@@ -30,7 +12,13 @@ const CreateUser = () => {
 
 		const newUser = {
 			email: userEmail,
-			password: password
+			password: password,
+      profile: {
+        name: "",
+        age: 0,
+        interest: "",
+        location: ""
+      }
 		}
 
 		let currentUsers = JSON.parse(localStorage.getItem("users"));
