@@ -1,38 +1,36 @@
 @use "globals";
 
-
 .startpageNav {
-	display: flex;
-    align-items: center;
-    
-    background: rebeccapurple;
-    color: globals.$fourth-color;
-	 font-family: Helvetica;
-    font-weight: 300;
+  display: flex;
+  align-items: center;
+
+  background: globals.$sixth-color;
+  color: globals.$fourth-color;
+  font-family: Helvetica;
+  font-weight: 300;
 }
 .NavTitle {
-    margin-right: auto;
-    font-size: 150%;
-    padding: 12px 16px;
-	color: white;
-   
+  margin-right: auto;
+  font-size: 150%;
+  padding: 12px 16px;
+  color: globals.$fifth-color;
 }
 .NavItem {
-    padding: 16px 16px;
-    cursor: pointer;
-    vertical-align: middle;
-	color: white;
+  padding: 16px 16px;
+  cursor: pointer;
+  vertical-align: middle;
+  color: globals.$fifth-color;
 }
 
-.datingImage{
-	margin-left: auto;
-	margin-right: auto;
-	display: block;
-	height:750px;
+.datingImage {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  height: 750px;
 }
 
-.datingheading{
-	margin-left: 500px;
-	color:rebeccapurple;
-	font-size: globals.$h2-size;
+.datingheading {
+  margin-left: 500px;
+  color: globals.$sixth-color;
+  font-size: globals.$h2-size;
 }

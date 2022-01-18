@@ -1,7 +1,8 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './login-user.scss'
 
+//Logout function
 export function logOut() {localStorage.removeItem("activeUser");}
 
 const LoginUser = () => {
