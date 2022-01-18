@@ -10,6 +10,12 @@
     font-size: $h2-size;
   }
 
+	p {
+		font-family: $secondary-font;
+		background-color: rgb(255, 204, 204);
+		padding: 4px;
+	}
+
   form {
     background-color: $fourth-color;
     font-family: $secondary-font;
@@ -25,7 +31,7 @@
     }
 
     input[type="submit"] {
-      background-color: $first-color;
+      background-color: $sixth-color;
       color: $fifth-color;
       margin-top: 16px;
       cursor: pointer;

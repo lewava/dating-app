@@ -1,8 +1,24 @@
+@import '../styles/globals.scss';
 
 .div-wrapper {
     display:block;
-    width:100%;
+    width:100%; 
+		font-family: $secondary-font;
 }
+
+.div-wrapper h2 {
+	font-family: $primary-font;
+	font-size: $h2-size;
+}
+
+.div-wrapper button {
+	background-color: $sixth-color;
+	color: $fifth-color;
+	margin: 8px;
+	padding: 4px;
+	cursor: pointer;
+}
+
 .div-wrapper div {
     display:block;
     width:100%;
@@ -13,10 +29,11 @@
     width:150px;
     height:150px;
     border-radius:50%;
-    border:2px solid black;
+    border:2px solid $first-color;
 }
 
 .div-wrapper section {
+	background-color: $fourth-color;
     display:flex;
     flex-flow: row wrap;
     justify-content:space-around;

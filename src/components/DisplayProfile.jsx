@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
-import './../components/profile.css';
-import ProfileField from './../components/ProfileField';
+import '../components/profile.scss';
+import ProfileField from '../components/ProfileField';
 
 const DisplayProfile= ({editProfile, switchMode}) => {
   const [user, setUser] = useState(null);

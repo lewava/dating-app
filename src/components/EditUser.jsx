@@ -12,7 +12,8 @@ const EditUser = ({ activeUser }) => {
 
 		const editedUser = {
 			email: userEmail,
-			password: password
+			password: password,
+			profile: activeUser.profile
 		}
 
 		let currentUsers = JSON.parse(localStorage.getItem("users"));

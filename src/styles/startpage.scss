@@ -6,7 +6,7 @@
 
   background: globals.$sixth-color;
   color: globals.$fourth-color;
-  font-family: Helvetica;
+  font-family: globals.$secondary-font;
   font-weight: 300;
 }
 .NavTitle {
@@ -31,6 +31,7 @@
 
 .datingheading {
   margin-left: 500px;
+	font-family: globals.$primary-font;
   color: globals.$sixth-color;
   font-size: globals.$h2-size;
 }
